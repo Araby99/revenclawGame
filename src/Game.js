@@ -36,6 +36,9 @@ const Game = ({ storyData }) => {
                     setChoiceNumber(id);
                     setEventStart(true);
                     break;
+                case "changeScene":
+                    setScenceActive(action.sceneName);
+                    break;
                 default:
                     break;
             }
@@ -89,13 +92,6 @@ const Game = ({ storyData }) => {
 
         }
     }, [scenceActive]);
-    /*useEffect(() => {
-        if (scenceActive === "lake" && lastChoice === "Go to Lake" && !scenarios[4].done) {
-            changeScenarioActive(4, true, undefined);
-        } else {
-            changeScenarioActive(4, false, undefined);
-        }
-    }, [scenceActive])*/
 
     useEffect(() => {
         game[0].success && changeScenarioActive(3, true, undefined);

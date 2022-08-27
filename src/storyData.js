@@ -149,7 +149,16 @@ const data = {
                     name: "hagrid",
                     pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
                     text: "This is so sunny Today, Don't it ?",
-                }
+                },
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Just go to the lake harry",
+                    action: {
+                        name: "changeScene",
+                        sceneName: "lake"
+                    }
+                },
             ],
             activate: false,
             done: false
