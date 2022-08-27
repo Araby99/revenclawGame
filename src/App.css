@@ -12,10 +12,6 @@ body {
   height: 100vh;
 }
 .target {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  background: #f00;
   position: relative;
   transition: 2s;
   transition-timing-function: linear;
@@ -73,4 +69,62 @@ body {
 }
 .game .scenarios .text {
   color: #fff;
+}
+.game .animal {
+  position: absolute;
+  z-index: 5;
+  top: 5%;
+  left: 5%;
+  transition: .5s;
+  animation: animal 2s ease-in-out;
+  cursor: pointer;
+}
+.game .animal img {
+  height: 300px;
+}
+.game .animal:hover {
+  filter: drop-shadow(0px 10px 3px #fff);
+}
+@keyframes animal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.game .score {
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+.choices {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #fff;
+}
+.choices .choice {
+  text-align: center;
+  border: solid 1px #000;
+  padding: 20px;
+  width: 30vw;
+  cursor: pointer;
+}
+.game .hagrid {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translate(0, -100%);
+  z-index: 5;
+}
+.game .hagrid img {
+  cursor: pointer;
+  height: 300px;
 }

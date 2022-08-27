@@ -61,6 +61,105 @@ const data = {
             ],
             activate: false,
             done: false
+        },
+        {
+            id: 2,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Don't Worry Harry This is the dragon",
+                },
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Try hit him by your charm",
+                    action: {
+                        name: "hitDragon"
+                    }
+                }
+            ],
+            activate: false,
+            done: false
+        },
+        {
+            id: 3,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Excellent Harry !",
+                },
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Now Harry what do you want to go ?",
+                    action: {
+                        name: "choose",
+                        choices: [
+                            {
+                                id: 0,
+                                text: "Go to Lake",
+                                event: {
+                                    name: "sceneChanges",
+                                    sceneName: "lake",
+                                    sceneStatue: true
+                                }
+                            },
+                            {
+                                id: 1,
+                                text: "Stay Here",
+                                event: {
+                                    name: "nothing"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            activate: false,
+            done: false
+        },
+        {
+            id: 4,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "So, Harry ! This is the lake",
+                },
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Fell free to do anything you want",
+                },
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "I will be in my hut if you need me, Bye !",
+                }
+            ],
+            activate: false,
+            done: false
+        },
+        {
+            id: 5,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "This is so sunny Today, Don't it ?",
+                }
+            ],
+            activate: false,
+            done: false
+        },
+    ],
+    games: [
+        {
+            id: 0,
+            name: "dragon",
+            success: false
         }
     ]
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Random = () => {
+const Random = ({ setDragonGame, setEventStart, changeGameDone }) => {
     const [style, setStyle] = useState({ top: 0, left: 0 });
     const [score, setScore] = useState(0)
     useEffect(() => {
@@ -18,17 +18,23 @@ const Random = () => {
     const handleClick = () => {
         setScore(score + 1)
     }
-
     useEffect(() => {
-        console.log(style);
-    }, [style])
+        if (score === 10) {
+            setDragonGame(false);
+            setEventStart(false);
+            changeGameDone("dragon")
+        }
+    }, [score])
+
 
     return (
         <div className='random'>
             <div className="score">
-                Score: {score}
+                <progress max={100} value={100 - score * 10}></progress>
             </div>
-            <div className="target" style={style} onClick={handleClick}></div>
+            <div className="target" style={style} onClick={handleClick}>
+                <img src="https://i.pinimg.com/originals/60/8b/f9/608bf91fae128a3721c1e45c2061e3f7.png" alt="Dragon" />
+            </div>
         </div>
     )
 }
