@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Random = ({ setDragonGame, setEventStart, changeGameDone }) => {
+const Random = ({ setHunt, setProgress, setText, setTextActive }) => {
     const [style, setStyle] = useState({ top: 0, left: 0 });
     const [score, setScore] = useState(0)
     useEffect(() => {
@@ -20,9 +20,10 @@ const Random = ({ setDragonGame, setEventStart, changeGameDone }) => {
     }
     useEffect(() => {
         if (score === 10) {
-            setDragonGame(false);
-            setEventStart(false);
-            changeGameDone("dragon")
+            setHunt(false);
+            setProgress(6);
+            setText(true);
+            setTextActive(0)
         }
     }, [score])
 

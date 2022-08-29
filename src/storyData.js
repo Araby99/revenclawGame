@@ -163,6 +163,72 @@ const data = {
             activate: false,
             done: false
         },
+        {
+            id: 6,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "A Bird is falling ! catch him with your wand",
+                    action: {
+                        name: "question",
+                        question: "Select the charm",
+                        answers: [
+                            {
+                                id: 0,
+                                text: "Alohomora",
+                                isCorrect: false
+                            },
+                            {
+                                id: 1,
+                                text: "Accio",
+                                isCorrect: false
+                            },
+                            {
+                                id: 2,
+                                text: "Chusioing",
+                                isCorrect: true
+                            },
+                            {
+                                id: 3,
+                                text: "Incendio",
+                                isCorrect: false
+                            },
+                        ]
+                    }
+                },
+            ],
+            activate: false,
+            done: false
+        },
+        {
+            id: 7,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "Good job !",
+                }
+            ],
+            activate: false,
+            done: false
+        },
+        {
+            id: 8,
+            scenario: [
+                {
+                    name: "hagrid",
+                    pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
+                    text: "No ! Try again",
+                    action: {
+                        name: "goToScenario",
+                        scenarioID: 6
+                    }
+                }
+            ],
+            activate: false,
+            done: false
+        },
     ],
     games: [
         {

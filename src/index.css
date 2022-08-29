@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: Cairo;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: url(https://cdn.discordapp.com/attachments/897204731833905153/1013571172375474387/wand_1.png), auto;
+}
+@font-face {
+    font-family: Cairo;
+    src: url(../public/fonts/Cairo-Regular.ttf);
+
+}
+body {
+    overflow: hidden;
+    background: #000;
+}
+.frame .background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.frame .text {
+    position: absolute;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 50%;
+    margin: auto;
+    background: url(https://cdn.discordapp.com/attachments/897204731833905153/1013572333614669925/f17eabe1e68dae7f.png);
+    border-radius: 200px;
+    box-shadow: 0 0 20px #fff;
+    color: #fff;
+}
+.frame .text .character {
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.frame .text .character img {
+    padding: 10px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff;
+    outline: solid 2px #fff;
+    outline-offset: -10px;
+}
+.frame .text .scenario {
+    flex-grow: 9;
+    padding: 20px;
+}
+@keyframes img {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+.frame .text .scenario .name {
+    margin-bottom: 20px;
+}
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.play-icon img {
+    height: 100px;
+    animation: play 2s ease-in-out infinite;
+}
+@keyframes play {
+    0% {
+        transform: scale(1);
+    } 50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.question {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   
+}
+.question .choose {
+    display: flex;
+    gap: 10px;
+}
+.question .answer {
+    height: 200px;
+    width: 150px;
+    background: url(https://cdn.discordapp.com/attachments/897204731833905153/1013572333614669925/f17eabe1e68dae7f.png);
+    border-radius: 5px;
+    border: solid 1px #fff;
+    box-shadow: 0 0 20px #fff;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+@media (max-width: 1400px) {
+    .frame .text {
+        width: 80%;
+    }
+}
+.random {
+    height: 100vh;
+}
+.target {
+    position: absolute;
+    transition: 2s;
+    transition-timing-function: linear;
+}
+.target img {
+    height: 300px;
+}

@@ -1,11 +1,10 @@
-import './App.css';
-import Game from './Game';
-import storyData from './storyData'
+import './index.css';
+import Circus from './Circus';
 
 const App = () => {
   return (
     <div className="App">
-      <Game storyData={storyData} />
+      <Circus />
     </div>
   );
 }

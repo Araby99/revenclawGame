@@ -12,7 +12,8 @@ const Game = ({ storyData }) => {
     const [dragonGame, setDragonGame] = useState(false);
     const [choice, setChoice] = useState(false);
     const [choiceNumber, setChoiceNumber] = useState(0);
-    const [lastChoice, setLastChoice] = useState("")
+    const [lastChoice, setLastChoice] = useState("");
+    const [question, setQuestion] = useState(false)
     const nextText = (id, length) => {
         const action = scenarios.filter(e => e.activate)[0].scenario[textActive].action;
         if (length <= textActive + 1) {
@@ -38,6 +39,16 @@ const Game = ({ storyData }) => {
                     break;
                 case "changeScene":
                     setScenceActive(action.sceneName);
+                    break;
+                case "question":
+                    setEventStart(true);
+                    setQuestion(true)
+                    setChoiceNumber(id)
+                    break;
+                case "goToScenario":
+                    changeScenarioActive(action.scenarioID, true, false)
+                    setEventStart(true);
+                    setQuestion(true)
                     break;
                 default:
                     break;
@@ -83,6 +94,14 @@ const Game = ({ storyData }) => {
             changeSceneActive(sceneName, sceneStatue)
         }
     }
+    const checkAnswer = (answer, sTrue, sFalse) => {
+        setQuestion(false)
+        if (answer) {
+            changeScenarioActive(sTrue, true, undefined)
+        } else {
+            changeScenarioActive(sFalse, true, undefined)
+        }
+    }
     useEffect(() => {
         if (scenceActive === "forest" && scenarios[0].done && !scenarios[1].done) {
             changeScenarioActive(1, true, undefined);
@@ -90,9 +109,10 @@ const Game = ({ storyData }) => {
         } else if (scenceActive === "lake" && lastChoice === "Go to Lake" && !scenarios[4].done) {
             changeScenarioActive(4, true, undefined);
 
+        } else if (scenceActive === "lake" && scenarios[4].done && !scenarios[6].done) {
+            changeScenarioActive(6, true, undefined);
         }
     }, [scenceActive]);
-
     useEffect(() => {
         game[0].success && changeScenarioActive(3, true, undefined);
     }, [game])
@@ -145,6 +165,16 @@ const Game = ({ storyData }) => {
             {(scenarios[4].done && scenceActive === "hagrid" && !eventStart) && (
                 <div className="hagrid">
                     <img src="https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png" alt="Hagrid" onClick={() => changeScenarioActive(5, true, undefined)} />
+                </div>
+            )}
+            {question && (
+                <div className="choices">
+                    <h3>{scenarios[choiceNumber].scenario[scenarios[choiceNumber].scenario.length - 1].action.question}</h3>
+                    {
+                        scenarios[choiceNumber].scenario[scenarios[choiceNumber].scenario.length - 1].action.answers.map(e => (
+                            <div className='choice' key={e.id} onClick={() => checkAnswer(e.isCorrect, 7, 8)}>{e.text}</div>
+                        ))
+                    }
                 </div>
             )}
         </div>
