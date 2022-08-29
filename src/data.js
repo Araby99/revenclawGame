@@ -1,12 +1,12 @@
 const data = [
     {
         id: 0,
-        frame: "https://cdn.discordapp.com/attachments/742849782468313159/1013592169686257774/Untitled85_20220829013225.png",
-        playIcon: "https://cdn.discordapp.com/attachments/897204731833905153/1013561524339617903/play_2.png"
+        frame: "./img/frame-0.png",
+        playIcon: "./img/play.png"
     },
     {
         id: 1,
-        frame: "https://cdn.discordapp.com/attachments/742849782468313159/1013588778377551873/Untitled87_20220829011201.png",
+        frame: "./img/frame-1.png",
         scenario: [
             {
                 name: "الجمهور",
@@ -17,7 +17,7 @@ const data = [
     },
     {
         id: 2,
-        frame: "https://cdn.discordapp.com/attachments/742849782468313159/1013592169686257774/Untitled85_20220829013225.png",
+        frame: "./img/frame-0.png",
         scenario: [
             {
                 name: "الشاب",
@@ -572,7 +572,10 @@ const data = [
             {
                 name: "الساحر",
                 pic: "https://www.pngitem.com/pimgs/m/541-5416785_hagrid-hagrid-harry-potter-hd-png-download.png",
-                text: "انتهت اللعبة ! أتمنى أن تكون قد أعجبتكم :)"
+                text: "انتهت اللعبة ! أتمنى أن تكون قد أعجبتكم :)",
+                action: {
+                    name: "gameOver"
+                }
             },
         ]
     }

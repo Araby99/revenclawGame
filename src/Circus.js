@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import dataGame from './data';
-import BackgroundAudio from './BackgroundAudio';
+import data from './data';
 import Random from './Random';
+import useLocalStorage from './useLocalStorage';
 
 const Circus = () => {
-    const [data, setData] = useState(dataGame);
-    const [progress, setProgress] = useState(0);
-    const [textActive, setTextActive] = useState(0);
-    const [text, setText] = useState(true);
+    const [progress, setProgress] = useLocalStorage("progress", () => 0);
+    const [textActive, setTextActive] = useLocalStorage("textActive", () => 0);
+    const [text, setText] = useLocalStorage("text", () => true);
     const [animation, setAnimation] = useState({ animation: "none" });
     const [sound, setSound] = useState(new Audio(""));
-    const [question, setQuestion] = useState(false);
-    const [eventNumber, setEventNumber] = useState();
-    const [event, setEvent] = useState(false);
-    const [useless, setUseless] = useState([]);
-    const [hunt, setHunt] = useState(false);
-    const [animals, setAnimals] = useState(0);
+    const [question, setQuestion] = useLocalStorage("question", () => false);
+    const [eventNumber, setEventNumber] = useLocalStorage("eventNumber", () => 0);
+    const [event, setEvent] = useLocalStorage("event", () => false);
+    const [useless, setUseless] = useLocalStorage("useless", () => []);
+    const [hunt, setHunt] = useLocalStorage("hunt", () => false);
+    const [animals, setAnimals] = useLocalStorage("animals", () => 0);
+    const [gameOver, setGameOver] = useLocalStorage("gameOver", () => false);
     let emptySound = new Audio("");
+    const gameover = () => {
+        setProgress(0);
+        setGameOver(false);
+        setUseless([]);
+        setAnimals(0);
+        setTextActive(0);
+        setText(true);
+        setQuestion(false);
+        setEventNumber(0);
+        setEvent(false);
+        setHunt(false)
+    }
     const nextText = () => {
         const action = data[progress].scenario[textActive].action;
         if (action) {
@@ -31,6 +43,9 @@ const Circus = () => {
                     setText(false);
                     setHunt(true);
                     setEvent(true);
+                    break;
+                case "gameOver":
+                    setGameOver(true)
                     break;
                 default:
                     break;
@@ -55,7 +70,6 @@ const Circus = () => {
         setQuestion(false);
         if (answer && (sTrue === 7 || sTrue === 12 || sTrue === 23)) {
             setAnimals(animals + 1);
-            console.log("Animal Added");
         }
         if (answer) {
             setProgress(sTrue);
@@ -69,6 +83,7 @@ const Circus = () => {
             setText(true);
         }
     }
+
     useEffect(() => {
         if (progress === 25 && animals === 3) {
             setUseless([...useless, 26, 27, 28])
@@ -138,6 +153,13 @@ const Circus = () => {
                 )}
                 {hunt && (
                     <Random setTextActive={setTextActive} setHunt={setHunt} setText={setText} setProgress={setProgress} />
+                )}
+                {gameOver && (
+                    <div className="game-over">
+                        <h1>اللعبة إنتهت !</h1>
+                        <h3>لقد استطعت إنقاذ {animals} من إجمال 3 حيوانات</h3>
+                        <button onClick={() => gameover()}>العب مجدداً</button>
+                    </div>
                 )}
             </div>
         </div>

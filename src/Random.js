@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const Random = ({ setHunt, setProgress, setText, setTextActive }) => {
-    const [style, setStyle] = useState({ top: 0, left: 0 });
+    const [style, setStyle] = useState({ top: "50%", left: "50%" });
     const [score, setScore] = useState(0)
     useEffect(() => {
         const dataGen = setInterval(() => {
