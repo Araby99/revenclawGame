@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const Random = ({ setHunt, setProgress, setText, setTextActive }) => {
+const Random = ({ images, setHunt, setProgress, setText, setTextActive }) => {
     const [style, setStyle] = useState({ top: "50%", left: "50%" });
     const [score, setScore] = useState(0)
     useEffect(() => {
@@ -34,7 +34,7 @@ const Random = ({ setHunt, setProgress, setText, setTextActive }) => {
                 <progress max={100} value={100 - score * 10}></progress>
             </div>
             <div className="target" style={style} onClick={handleClick}>
-                <img src="https://i.pinimg.com/originals/60/8b/f9/608bf91fae128a3721c1e45c2061e3f7.png" alt="Dragon" />
+                <img src={images['beast-1.png']} alt="Bird" />
             </div>
         </div>
     )

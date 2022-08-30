@@ -4,6 +4,13 @@ import Random from './Random';
 import useLocalStorage from './useLocalStorage';
 
 const Circus = () => {
+    function importAll(r) {
+        let images = {};
+        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+        return images;
+    }
+
+    const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     const [progress, setProgress] = useLocalStorage("progress", () => 0);
     const [textActive, setTextActive] = useLocalStorage("textActive", () => 0);
     const [text, setText] = useLocalStorage("text", () => true);
@@ -120,16 +127,16 @@ const Circus = () => {
     return (
         <div className='circus'>
             <div className="frame" style={animation}>
-                <img src={data[progress].frame} alt="Background" className='background' />
+                <img src={images[data[progress].frame]} alt="Background" className='background' />
                 {data[progress].playIcon && (
                     <div className="play-icon">
-                        <img src={data[progress].playIcon} onClick={() => setProgress(progress + 1)} alt="Play" />
+                        <img src={images[data[progress].playIcon]} onClick={() => setProgress(progress + 1)} alt="Play" />
                     </div>
                 )}
                 {(text && data[progress].scenario) && (
                     <div className="text" onClick={() => nextText()}>
                         <div className="character">
-                            <img src={data[progress].scenario[textActive].pic} alt="Character" />
+                            <img src={images[data[progress].scenario[textActive].pic]} alt="Character" />
                         </div>
                         <div className="scenario">
                             <div className="name">
@@ -152,7 +159,7 @@ const Circus = () => {
                     </div>
                 )}
                 {hunt && (
-                    <Random setTextActive={setTextActive} setHunt={setHunt} setText={setText} setProgress={setProgress} />
+                    <Random images={images} setTextActive={setTextActive} setHunt={setHunt} setText={setText} setProgress={setProgress} />
                 )}
                 {gameOver && (
                     <div className="game-over">
