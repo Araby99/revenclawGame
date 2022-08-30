@@ -33,7 +33,7 @@ const data = [
             {
                 name: "الشاب",
                 pic: "youth.png",
-                text: "اللعنة….  لقد هربت الحيوانات."
+                text: "اللعنة…. لقد هربت الحيوانات."
             },
         ]
     },
@@ -92,37 +92,28 @@ const data = [
         frame: "frame-0.png",
         scenario: [
             {
+                name: "الساحر",
+                pic: "male.png",
+                text: "Incarcerous"
+            },
+            {
                 name: "الساحرة",
                 pic: "female.png",
-                text: "احترس ! الطائر يسقط ! اختر تعويذتك قبل أن يقع على الأرض و يموت.",
+                text: "احترس ! الطائر يسقط ! اختر تعويذتك قبل أن يقع على الأرض.",
                 action: {
                     name: "question",
                     question: "Select the charm",
                     answers: [
                         {
                             id: 0,
-                            text: "Alohomora",
-                            isCorrect: false,
-                            correctSen: 7,
-                            falsesSen: 8
-                        },
-                        {
-                            id: 1,
-                            text: "Accio",
-                            isCorrect: false,
-                            correctSen: 7,
-                            falsesSen: 8
-                        },
-                        {
-                            id: 2,
-                            text: "Chusioing",
+                            text: "Molliare",
                             isCorrect: true,
                             correctSen: 7,
                             falsesSen: 8
                         },
                         {
-                            id: 3,
-                            text: "Incendio",
+                            id: 1,
+                            text: "Finite Incantatem",
                             isCorrect: false,
                             correctSen: 7,
                             falsesSen: 8
@@ -149,7 +140,7 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
-                text: " مالذي سنفله الأن؟"
+                text: " ما الذي سنفعله الأن؟"
             },
             {
                 name: "الساحر",
@@ -171,12 +162,12 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
-                text: "حقاً !! لقد قتلته."
+                text: "احترس !! لقد أبطلت تعويذة الصمت و هرب الحيوان"
             },
             {
                 name: "الساحرة",
                 pic: "female.png",
-                text: " مالذي سنفله الأن؟"
+                text: " ما الذي سنفله الأن؟"
             },
             {
                 name: "الساحر",
@@ -257,29 +248,15 @@ const data = [
                     answers: [
                         {
                             id: 0,
-                            text: "Alohomora",
+                            text: "Reducio ",
                             isCorrect: false,
                             correctSen: 12,
                             falsesSen: 13
                         },
                         {
                             id: 1,
-                            text: "Accio",
-                            isCorrect: false,
-                            correctSen: 12,
-                            falsesSen: 13
-                        },
-                        {
-                            id: 2,
-                            text: "Chusioing",
+                            text: "Petrificus Totalus",
                             isCorrect: true,
-                            correctSen: 12,
-                            falsesSen: 13
-                        },
-                        {
-                            id: 3,
-                            text: "Incendio",
-                            isCorrect: false,
                             correctSen: 12,
                             falsesSen: 13
                         },
@@ -292,6 +269,11 @@ const data = [
         id: 12,
         frame: "frame-0.png",
         scenario: [
+            {
+                name: "الساحرة",
+                pic: "female.png",
+                text: "سأقوم أنا بتشتيت إنتباهه بتحويل صخرة كبيرة إلى شكل عنزة ليقوم الحيوان بالانتباه إليها والجري نحوها"
+            },
             {
                 name: "الساحر",
                 pic: "male.png",
@@ -313,6 +295,11 @@ const data = [
                 pic: "female.png",
                 text: "يخرب بيتك انت ضيعته"
             },
+            {
+                name: "الساحرة",
+                pic: "female.png",
+                text: "لقد قمت بتصغير الوحش و الآن قد هرب !"
+            }
         ]
     },
     {
@@ -436,7 +423,7 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
-                text: "هثث هثث أنا الثعبان"
+                text: "*تتحول الساحرة إلى أفعى كبيرة*"
             },
         ]
     },
@@ -498,6 +485,11 @@ const data = [
                 pic: "male.png",
                 text: "و أخيراً هذا المشاكس في القفص !"
             },
+            {
+                name: "الساحرة",
+                pic: "female.png",
+                text: "هيا بنا لنعود إلى السيرك."
+            },
         ]
     },
     {
@@ -507,7 +499,7 @@ const data = [
             {
                 name: "الساحر",
                 pic: "male.png",
-                text: "!"
+                text: "لقد أخطأت في التعويذة و قام الوحش بمهاجمة الساحرة و هرب !"
             },
         ]
     },

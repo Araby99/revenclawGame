@@ -9,7 +9,7 @@ const Random = ({ images, setHunt, setProgress, setText, setTextActive }) => {
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`
             })
-        }, 2000);
+        }, 1000);
 
         return () => {
             clearInterval(dataGen);

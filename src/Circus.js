@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import data from './data';
 import Random from './Random';
+import { motion } from "framer-motion";
 import useLocalStorage from './useLocalStorage';
 
 const Circus = () => {
@@ -142,7 +143,17 @@ const Circus = () => {
                             <div className="name">
                                 <h2>{data[progress].scenario[textActive].name} :</h2>
                             </div>
-                            <div className="dialog">{data[progress].scenario[textActive].text}</div>
+                            <div className="dialog">
+                                {
+                                    data[progress].scenario[textActive].text.split(" ").map((word, i) => (
+                                        <motion.span
+                                            key={i}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            transition={{ ease: "easeInOut", delay: i * 0.2 }}>{word}</motion.span>
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 )}
