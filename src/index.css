@@ -14,10 +14,10 @@
 @font-face {
     font-family: Cairo;
     src: url(../public/fonts/Cairo-Regular.ttf);
-
 }
 body {
     overflow: hidden;
+    background: #000;
 }
 .frame .background {
     position: absolute;

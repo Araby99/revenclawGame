@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import data from './data';
+import gameData from './data';
 import Random from './Random';
-import { motion } from "framer-motion";
 import useLocalStorage from './useLocalStorage';
 
 const Circus = () => {
@@ -10,7 +9,7 @@ const Circus = () => {
         r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
         return images;
     }
-
+    const [data, setData] = useState(gameData)
     const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     const [progress, setProgress] = useLocalStorage("progress", () => 0);
     const [textActive, setTextActive] = useLocalStorage("textActive", () => 0);
@@ -35,7 +34,8 @@ const Circus = () => {
         setQuestion(false);
         setEventNumber(0);
         setEvent(false);
-        setHunt(false)
+        setHunt(false);
+        localStorage.clear()
     }
     const nextText = () => {
         const action = data[progress].scenario[textActive].action;
@@ -76,15 +76,15 @@ const Circus = () => {
     const checkAnswer = (answer, sTrue, sFalse) => {
         setEvent(false);
         setQuestion(false);
-        if (answer && (sTrue === 7 || sTrue === 12 || sTrue === 23)) {
+        if (answer && (sTrue === 8 || sTrue === 13 || sTrue === 24)) {
             setAnimals(animals + 1);
         }
         if (answer) {
-            setProgress(sTrue);
             setUseless([...useless, sFalse])
+            setProgress(progress + 1)
         } else {
-            setProgress(sFalse)
             setUseless([...useless, sTrue])
+            setProgress(progress + 1)
         }
         setTextActive(0);
         if (data[progress].scenario) {
@@ -93,38 +93,63 @@ const Circus = () => {
     }
 
     useEffect(() => {
-        if (progress === 25 && animals === 3) {
+        sound.pause()
+        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 3) {
+            sound.pause()
+            setUseless([...useless, 27, 28, 29])
+        }
+        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 2) {
+            sound.pause()
+            setUseless([...useless, 26, 28, 29])
+        }
+        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 1) {
+            sound.pause()
+            setUseless([...useless, 26, 27, 29])
+        }
+        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 0) {
+            sound.pause()
             setUseless([...useless, 26, 27, 28])
-        }
-        if (progress === 25 && animals === 2) {
-            setProgress(progress + 1);
-            setUseless([...useless, 27, 28])
-        }
-        if (progress === 25 && animals === 1) {
-            setProgress(progress + 2)
-            setUseless([...useless, 28])
-        }
-        if (progress === 25 && animals === 0) {
-            setProgress(progress + 3)
         }
         if (progress === 1) {
             setAnimation({ animation: "img 1s ease-in-out" })
         }
         document.getElementsByClassName("frame")[0].addEventListener("animationend", () => setAnimation({ animation: "none" }));
-        if (data[progress].audio) {
+        if (data[progress].scenario && !useless.includes(data[progress].id)) {
             sound.pause()
-            setSound(new Audio(data[progress].audio));
+            if (data[progress].scenario[textActive].audio) {
+                setSound(new Audio(data[progress].scenario[textActive].audio));
+                data[progress].scenario[textActive].audio === undefined && sound.pause();
+            } else {
+                setSound(new Audio(""))
+            }
         } else {
             setSound(new Audio(""))
         }
-        data[progress].audio === undefined && sound.pause();
-        if (useless.includes(progress)) {
-            setProgress(progress + 1)
-        }
     }, [progress]);
     useEffect(() => {
-        sound.src !== emptySound.src && sound.play()
+        sound.pause()
+        if (data[progress].scenario && !useless.includes(data[progress].id)) {
+            if (data[progress].scenario[textActive].audio) {
+                setSound(new Audio(data[progress].scenario[textActive].audio));
+                data[progress].scenario[textActive].audio === undefined && sound.pause();
+            } else {
+                setSound(new Audio(""))
+            }
+        } else {
+            setSound(new Audio(""))
+        }
+    }, [textActive])
+
+    useEffect(() => {
+        if (sound.src !== emptySound.src) {
+            sound.play();
+        }
     }, [sound]);
+    useEffect(() => {
+        const newState = data.filter(e => !useless.includes(e.id));
+        setData(newState)
+    }, [useless])
+
     return (
         <div className='circus'>
             <div className="frame" style={animation}>
@@ -136,22 +161,22 @@ const Circus = () => {
                 )}
                 {(text && data[progress].scenario) && (
                     <div className="text" onClick={() => nextText()}>
-                        <div className="character">
-                            <img src={images[data[progress].scenario[textActive].pic]} alt="Character" />
-                        </div>
-                        <div className="scenario">
-                            <div className="name">
-                                <h2>{data[progress].scenario[textActive].name} :</h2>
+                        {data[progress].scenario[textActive].pic && (
+
+                            <div className="character">
+                                <img src={images[data[progress].scenario[textActive].pic]} alt="Character" />
                             </div>
+                        )}
+                        <div className="scenario">
+                            {data[progress].scenario[textActive].name && (
+
+                                <div className="name">
+                                    <h2>{data[progress].scenario[textActive].name} :</h2>
+                                </div>
+                            )}
                             <div className="dialog">
                                 {
-                                    data[progress].scenario[textActive].text.split(" ").map((word, i) => (
-                                        <motion.span
-                                            key={i}
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            transition={{ ease: "easeInOut", delay: i * 0.2 }}>{word}</motion.span>
-                                    ))
+                                    data[progress].scenario[textActive].text
                                 }
                             </div>
                         </div>
