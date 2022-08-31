@@ -76,12 +76,11 @@ const data = [
     },
     {
         id: 7,
-        frame: "frame-26.jpg",
+        frame: "few.jpg",
         scenario: [
             {
-                name: "الشاب",
-                pic: "youth.png",
-                text: ".....",
+                audio: "./audio/few.mp3",
+                text: "A few moments later",
             },
         ]
     },
@@ -424,6 +423,11 @@ const data = [
                 pic: "male.png",
                 audio: "./audio/male-12.mp3",
                 text: "Petrificus Totalus"
+            },
+            {
+                name: "الساحر",
+                pic: "male.png",
+                text: "وحش آخر ينضم للمجموعة"
             },
         ]
     },
