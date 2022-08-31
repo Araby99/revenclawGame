@@ -130,7 +130,7 @@ const data = [
     },
     {
         id: 7,
-        frame: "frame-0.png",
+        frame: "frame-10.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -358,11 +358,13 @@ const data = [
             {
                 name: "الساحر",
                 pic: "male.png",
+                audio: "./audio/comedy-1.mp3",
                 text: "معاك غيره ؟"
             },
             {
                 name: "الساحرة",
                 pic: "female.png",
+                audio: "./audio/comedy-2.mp3",
                 text: "يخرب بيتك انت ضيعته"
             },
             {
@@ -375,7 +377,7 @@ const data = [
     },
     {
         id: 16,
-        frame: "frame-0.png",
+        frame: "frame-15.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -399,7 +401,7 @@ const data = [
     },
     {
         id: 17,
-        frame: "frame-15.jpg",
+        frame: "frame-16.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -417,7 +419,7 @@ const data = [
     },
     {
         id: 18,
-        frame: "frame-16.png",
+        frame: "frame-17.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -429,11 +431,12 @@ const data = [
     },
     {
         id: 19,
-        frame: "frame-17.jpg",
+        frame: "frame-18.jpg",
         scenario: [
             {
                 name: "الحيوان",
                 pic: "beast-3.png",
+                audio: "./audio/beast-1.mp3",
                 text: "أحمق أحمق… تبا لك"
             },
             {
@@ -445,6 +448,7 @@ const data = [
             {
                 name: "الحيوان",
                 pic: "beast-3.png",
+                audio: "./audio/beast-2.mp3",
                 text: "اللعنة عليك.",
                 action: {
                     name: "question",
@@ -478,18 +482,19 @@ const data = [
     },
     {
         id: 20,
-        frame: "frame-17.jpg",
+        frame: "frame-19.jpg",
         scenario: [
             {
                 name: "الحيوان",
                 pic: "beast-3.png",
+                audio: "./audio/beast-3.mp3",
                 text: "ها ها ها ها ها ها "
             },
         ]
     },
     {
         id: 21,
-        frame: "frame-17.jpg",
+        frame: "frame-20.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -501,7 +506,7 @@ const data = [
     },
     {
         id: 22,
-        frame: "frame-20.png",
+        frame: "frame-21.jpg",
         scenario: [
             {
                 text: "*تتحول الساحرة إلى أفعى كبيرة*"
@@ -510,7 +515,7 @@ const data = [
     },
     {
         id: 23,
-        frame: "frame-20.png",
+        frame: "frame-21.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -521,7 +526,7 @@ const data = [
     },
     {
         id: 24,
-        frame: "frame-20.png",
+        frame: "frame-21.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -560,7 +565,7 @@ const data = [
     },
     {
         id: 25,
-        frame: "frame-23.jpg",
+        frame: "frame-22.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -578,7 +583,7 @@ const data = [
     },
     {
         id: 26,
-        frame: "frame-24.png",
+        frame: "frame-23.png",
         scenario: [
             {
                 name: "الساحر",
