@@ -30,12 +30,40 @@ const data = [
     },
     {
         id: 3,
-        frame: "frame-3.png",
+        frame: "frame-24.jpg",
         scenario: [
             {
                 text: "*صوت صراخ الحيوانات والقفز خارج الأقفاص*",
                 audio: "./audio/chain.mp3"
             },
+        ]
+    },
+    {
+        id: 4,
+        frame: "frame-3.png",
+        scenario: [
+            {
+                name: "الشاب",
+                pic: "youth.png",
+                text: "ما الذي يحدث هنا ؟",
+            },
+        ]
+    },
+    {
+        id: 5,
+        frame: "frame-25.jpg",
+        scenario: [
+            {
+                name: "الشاب",
+                pic: "youth.png",
+                text: "عاااااااااااااا",
+            },
+        ]
+    },
+    {
+        id: 6,
+        frame: "frame-24.jpg",
+        scenario: [
             {
                 name: "الشاب",
                 pic: "youth.png",
@@ -45,7 +73,18 @@ const data = [
         ]
     },
     {
-        id: 4,
+        id: 7,
+        frame: "frame-26.jpg",
+        scenario: [
+            {
+                name: "الشاب",
+                pic: "youth.png",
+                text: ".....",
+            },
+        ]
+    },
+    {
+        id: 8,
         frame: "frame-4.png",
         scenario: [
             {
@@ -78,6 +117,12 @@ const data = [
                 audio: "./audio/male-3.mp3",
                 text: "هذا من حسن الحظ وإلا أصابنا الجنون، سيكون العثور عليه صعب ولكن  لونه الأصفر الزاهي قد يساعدنا في العثور عليه."
             },
+        ]
+    },
+    {
+        id: 9,
+        frame: "frame-26.jpg",
+        scenario: [
             {
                 name: "الساحر",
                 pic: "male.png",
@@ -93,12 +138,18 @@ const data = [
         ]
     },
     {
-        id: 5,
-        frame: "frame-0.png",
+        id: 10,
+        frame: "frame-27.jpg",
         scenario: [
             {
                 text: "*تتغير صور الساحرة فقط لتظهر أفعى كبيرة ترفع نصف جسدها للأعلى*"
             },
+        ]
+    },
+    {
+        id: 11,
+        frame: "frame-29.jpg",
+        scenario: [
             {
                 name: "الساحر",
                 pic: "male.png",
@@ -108,8 +159,19 @@ const data = [
         ]
     },
     {
-        id: 6,
-        frame: "frame-5.jpg",
+        id: 12,
+        frame: "frame-28.jpg",
+        scenario: [
+            {
+                name: "الساحرة",
+                pic: "female.png",
+                text: "تث تث"
+            },
+        ]
+    },
+    {
+        id: 13,
+        frame: "frame-11.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -117,6 +179,12 @@ const data = [
                 audio: "./audio/female-3.mp3",
                 text: "انظر إنه هناك."
             },
+        ]
+    },
+    {
+        id: 14,
+        frame: "frame-30.jpg",
+        scenario: [
             {
                 name: "الساحرة",
                 pic: "female.png",
@@ -129,8 +197,8 @@ const data = [
         ]
     },
     {
-        id: 7,
-        frame: "frame-10.jpg",
+        id: 15,
+        frame: "frame-12.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -138,6 +206,12 @@ const data = [
                 audio: "./audio/male-4.mp3",
                 text: "Incarcerous"
             },
+        ]
+    },
+    {
+        id: 16,
+        frame: "frame-31.jpg",
+        scenario: [
             {
                 name: "الساحرة",
                 pic: "female.png",
@@ -151,15 +225,15 @@ const data = [
                             id: 0,
                             text: "Molliare",
                             isCorrect: true,
-                            correctSen: 8,
-                            falsesSen: 9
+                            correctSen: 17,
+                            falsesSen: 18
                         },
                         {
                             id: 1,
                             text: "Finite Incantatem",
                             isCorrect: false,
-                            correctSen: 8,
-                            falsesSen: 9
+                            correctSen: 17,
+                            falsesSen: 18
                         },
                     ]
                 }
@@ -167,8 +241,8 @@ const data = [
         ]
     },
     {
-        id: 8,
-        frame: "frame-0.png",
+        id: 17,
+        frame: "frame-13.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -204,8 +278,8 @@ const data = [
         ]
     },
     {
-        id: 9,
-        frame: "frame-0.png",
+        id: 18,
+        frame: "frame-14.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -235,7 +309,7 @@ const data = [
         ]
     },
     {
-        id: 10,
+        id: 19,
         frame: "frame-6.jpg",
         scenario: [
             {
@@ -259,7 +333,7 @@ const data = [
         ]
     },
     {
-        id: 11,
+        id: 20,
         frame: "frame-6.jpg",
         scenario: [
             {
@@ -277,7 +351,7 @@ const data = [
         ]
     },
     {
-        id: 12,
+        id: 21,
         frame: "frame-7.jpg",
         scenario: [
             {
@@ -308,7 +382,7 @@ const data = [
         ]
     },
     {
-        id: 13,
+        id: 22,
         frame: "frame-8.jpg",
         scenario: [
             {
@@ -324,15 +398,15 @@ const data = [
                             id: 0,
                             text: "Reducio ",
                             isCorrect: false,
-                            correctSen: 14,
-                            falsesSen: 15
+                            correctSen: 23,
+                            falsesSen: 14
                         },
                         {
                             id: 1,
                             text: "Petrificus Totalus",
                             isCorrect: true,
-                            correctSen: 14,
-                            falsesSen: 15
+                            correctSen: 23,
+                            falsesSen: 14
                         },
                     ]
                 }
@@ -340,7 +414,7 @@ const data = [
         ]
     },
     {
-        id: 14,
+        id: 23,
         frame: "frame-9.jpg",
         scenario: [
             {
@@ -352,7 +426,7 @@ const data = [
         ]
     },
     {
-        id: 15,
+        id: 24,
         frame: "frame-6.jpg",
         scenario: [
             {
@@ -376,7 +450,7 @@ const data = [
         ]
     },
     {
-        id: 16,
+        id: 25,
         frame: "frame-15.jpg",
         scenario: [
             {
@@ -400,7 +474,7 @@ const data = [
         ]
     },
     {
-        id: 17,
+        id: 26,
         frame: "frame-16.jpg",
         scenario: [
             {
@@ -418,7 +492,7 @@ const data = [
         ]
     },
     {
-        id: 18,
+        id: 27,
         frame: "frame-17.jpg",
         scenario: [
             {
@@ -430,7 +504,7 @@ const data = [
         ]
     },
     {
-        id: 19,
+        id: 28,
         frame: "frame-18.jpg",
         scenario: [
             {
@@ -459,21 +533,21 @@ const data = [
                             text: "Alohomora",
                             isCorrect: false,
                             correctSen: 50000,
-                            falsesSen: 19
+                            falsesSen: 29
                         },
                         {
                             id: 1,
                             text: "Accio",
                             isCorrect: false,
                             correctSen: 50000,
-                            falsesSen: 19
+                            falsesSen: 29
                         },
                         {
                             id: 3,
                             text: "Incendio",
                             isCorrect: false,
                             correctSen: 50000,
-                            falsesSen: 19
+                            falsesSen: 29
                         },
                     ]
                 }
@@ -481,7 +555,7 @@ const data = [
         ]
     },
     {
-        id: 20,
+        id: 29,
         frame: "frame-19.jpg",
         scenario: [
             {
@@ -493,7 +567,7 @@ const data = [
         ]
     },
     {
-        id: 21,
+        id: 30,
         frame: "frame-20.jpg",
         scenario: [
             {
@@ -505,7 +579,7 @@ const data = [
         ]
     },
     {
-        id: 22,
+        id: 31,
         frame: "frame-21.jpg",
         scenario: [
             {
@@ -514,7 +588,7 @@ const data = [
         ]
     },
     {
-        id: 23,
+        id: 32,
         frame: "frame-21.jpg",
         scenario: [
             {
@@ -525,7 +599,7 @@ const data = [
         ]
     },
     {
-        id: 24,
+        id: 33,
         frame: "frame-21.jpg",
         scenario: [
             {
@@ -541,22 +615,22 @@ const data = [
                             id: 0,
                             text: "Alohomora",
                             isCorrect: false,
-                            correctSen: 25,
-                            falsesSen: 26
+                            correctSen: 34,
+                            falsesSen: 35
                         },
                         {
                             id: 1,
                             text: "Accio",
                             isCorrect: false,
-                            correctSen: 25,
-                            falsesSen: 26
+                            correctSen: 34,
+                            falsesSen: 35
                         },
                         {
                             id: 3,
                             text: "Petrificus Totalus",
                             isCorrect: true,
-                            correctSen: 25,
-                            falsesSen: 26
+                            correctSen: 34,
+                            falsesSen: 35
                         },
                     ]
                 }
@@ -564,7 +638,7 @@ const data = [
         ]
     },
     {
-        id: 25,
+        id: 34,
         frame: "frame-22.jpg",
         scenario: [
             {
@@ -582,8 +656,8 @@ const data = [
         ]
     },
     {
-        id: 26,
-        frame: "frame-23.png",
+        id: 35,
+        frame: "frame-23.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -594,8 +668,8 @@ const data = [
         ]
     },
     {
-        id: 27,
-        frame: "frame-0.png",
+        id: 36,
+        frame: "frame-4.png",
         scenario: [
             {
                 name: "الساحر",
@@ -606,8 +680,8 @@ const data = [
         ]
     },
     {
-        id: 28,
-        frame: "frame-0.png",
+        id: 37,
+        frame: "frame-4.png",
         scenario: [
             {
                 name: "الساحر",
@@ -618,8 +692,8 @@ const data = [
         ]
     },
     {
-        id: 29,
-        frame: "frame-0.png",
+        id: 38,
+        frame: "frame-4.png",
         scenario: [
             {
                 name: "الساحر",
@@ -630,7 +704,7 @@ const data = [
         ]
     },
     {
-        id: 30,
+        id: 39,
         frame: "frame-4.png",
         scenario: [
             {
@@ -642,7 +716,7 @@ const data = [
         ]
     },
     {
-        id: 31,
+        id: 40,
         frame: "frame-0.png",
         scenario: [
             {

@@ -21,7 +21,7 @@ const Random = ({ images, setHunt, setProgress, setText, setTextActive }) => {
     useEffect(() => {
         if (score === 10) {
             setHunt(false);
-            setProgress(7);
+            setProgress(15);
             setText(true);
             setTextActive(0)
         }

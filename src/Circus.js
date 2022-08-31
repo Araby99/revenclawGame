@@ -25,17 +25,8 @@ const Circus = () => {
     const [gameOver, setGameOver] = useLocalStorage("gameOver", () => false);
     let emptySound = new Audio("");
     const gameover = () => {
-        setProgress(0);
-        setGameOver(false);
-        setUseless([]);
-        setAnimals(0);
-        setTextActive(0);
-        setText(true);
-        setQuestion(false);
-        setEventNumber(0);
-        setEvent(false);
-        setHunt(false);
         localStorage.clear()
+        window.location.reload()
     }
     const nextText = () => {
         const action = data[progress].scenario[textActive].action;
@@ -76,7 +67,7 @@ const Circus = () => {
     const checkAnswer = (answer, sTrue, sFalse) => {
         setEvent(false);
         setQuestion(false);
-        if (answer && (sTrue === 8 || sTrue === 14 || sTrue === 25)) {
+        if (answer && (sTrue === 17 || sTrue === 23 || sTrue === 34)) {
             setAnimals(animals + 1);
         }
         if (answer) {
@@ -94,21 +85,21 @@ const Circus = () => {
 
     useEffect(() => {
         sound.pause()
-        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 3) {
+        if ((data[progress].id === 34 || data[progress].id === 35) && animals === 3) {
             sound.pause()
-            setUseless([...useless, 28, 29, 30])
+            setUseless([...useless, 37, 38, 39])
         }
-        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 2) {
+        if ((data[progress].id === 34 || data[progress].id === 35) && animals === 2) {
             sound.pause()
-            setUseless([...useless, 27, 29, 30])
+            setUseless([...useless, 36, 38, 39])
         }
-        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 1) {
+        if ((data[progress].id === 34 || data[progress].id === 35) && animals === 1) {
             sound.pause()
-            setUseless([...useless, 27, 28, 30])
+            setUseless([...useless, 36, 37, 39])
         }
-        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 0) {
+        if ((data[progress].id === 34 || data[progress].id === 35) && animals === 0) {
             sound.pause()
-            setUseless([...useless, 27, 28, 29])
+            setUseless([...useless, 36, 37, 38])
         }
         if (progress === 1) {
             setAnimation({ animation: "img 1s ease-in-out" })
