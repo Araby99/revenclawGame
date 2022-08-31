@@ -76,7 +76,7 @@ const Circus = () => {
     const checkAnswer = (answer, sTrue, sFalse) => {
         setEvent(false);
         setQuestion(false);
-        if (answer && (sTrue === 8 || sTrue === 13 || sTrue === 24)) {
+        if (answer && (sTrue === 8 || sTrue === 14 || sTrue === 25)) {
             setAnimals(animals + 1);
         }
         if (answer) {
@@ -94,21 +94,21 @@ const Circus = () => {
 
     useEffect(() => {
         sound.pause()
-        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 3) {
+        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 3) {
+            sound.pause()
+            setUseless([...useless, 28, 29, 30])
+        }
+        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 2) {
+            sound.pause()
+            setUseless([...useless, 27, 29, 30])
+        }
+        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 1) {
+            sound.pause()
+            setUseless([...useless, 27, 28, 30])
+        }
+        if ((data[progress].id === 25 || data[progress].id === 26) && animals === 0) {
             sound.pause()
             setUseless([...useless, 27, 28, 29])
-        }
-        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 2) {
-            sound.pause()
-            setUseless([...useless, 26, 28, 29])
-        }
-        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 1) {
-            sound.pause()
-            setUseless([...useless, 26, 27, 29])
-        }
-        if ((data[progress].id === 24 || data[progress].id === 25) && animals === 0) {
-            sound.pause()
-            setUseless([...useless, 26, 27, 28])
         }
         if (progress === 1) {
             setAnimation({ animation: "img 1s ease-in-out" })
@@ -200,7 +200,7 @@ const Circus = () => {
                 {gameOver && (
                     <div className="game-over">
                         <h1>اللعبة إنتهت !</h1>
-                        <h3>لقد استطعت إنقاذ {animals} من إجمال 3 حيوانات</h3>
+                        <h3>لقد استطعت إستعادة {animals} من إجمال 3 حيوانات</h3>
                         <button onClick={() => gameover()}>العب مجدداً</button>
                     </div>
                 )}

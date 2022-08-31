@@ -23,28 +23,30 @@ const data = [
             {
                 name: "الشاب",
                 pic: "youth.png",
+                audio: "./audio/youth-1.mp3",
                 text: "سأغلق الأقفاص جيداً كما طلب مني السيد روبرت",
             },
         ]
     },
     {
         id: 3,
-        frame: "frame-0.png",
+        frame: "frame-3.png",
         scenario: [
             {
-                text: "*صوت صراخ الحيوانات والقفز داخل الأقفاص*",
+                text: "*صوت صراخ الحيوانات والقفز خارج الأقفاص*",
                 audio: "./audio/chain.mp3"
             },
             {
                 name: "الشاب",
                 pic: "youth.png",
+                audio: "./audio/youth-2.mp3",
                 text: "اللعنة…. لقد هربت الحيوانات.",
             },
         ]
     },
     {
         id: 4,
-        frame: "frame-0.png",
+        frame: "frame-4.png",
         scenario: [
             {
                 name: "الساحر",
@@ -118,6 +120,7 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
+                audio: "./audio/female-14.mp3",
                 text: "لقد رأيته إنه هو حيوان ال fwooper  يجب أن نمسك به الآن قبل أن يطير مبتعداً  ؛  و لكن كيف سنقوم بالامساك به. ",
                 action: {
                     name: "hunt",
@@ -138,6 +141,7 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
+                audio: "./audio/female-4.m4a",
                 text: "احترس ! الطائر يسقط ! تصرف قبل أن يقع على الأرض.",
                 action: {
                     name: "question",
@@ -206,6 +210,7 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
+                audio: "./audio/female-5.mp3",
                 text: "احترس !! لقد أبطلت تعويذة الصمت و هرب الحيوان"
             },
             {
@@ -231,7 +236,7 @@ const data = [
     },
     {
         id: 10,
-        frame: "frame-0.png",
+        frame: "frame-6.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -255,7 +260,7 @@ const data = [
     },
     {
         id: 11,
-        frame: "frame-10.jpg",
+        frame: "frame-6.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -273,7 +278,7 @@ const data = [
     },
     {
         id: 12,
-        frame: "frame-0.png",
+        frame: "frame-7.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -298,6 +303,19 @@ const data = [
                 pic: "male.png",
                 audio: "./audio/male-11.mp3",
                 text: "عليك بتشتيت انتباهه حتى أتمكن من الإمساك به.",
+            },
+
+        ]
+    },
+    {
+        id: 13,
+        frame: "frame-8.jpg",
+        scenario: [
+            {
+                name: "الساحرة",
+                pic: "female.png",
+                audio: "./audio/female-13.mp3",
+                text: "سأقوم أنا بتشتيت إنتباهه بتحويل صخرة كبيرة إلى شكل عنزة ليقوم الحيوان بالانتباه إليها والجري نحوها",
                 action: {
                     name: "question",
                     question: "Select the charm",
@@ -306,15 +324,15 @@ const data = [
                             id: 0,
                             text: "Reducio ",
                             isCorrect: false,
-                            correctSen: 13,
-                            falsesSen: 14
+                            correctSen: 14,
+                            falsesSen: 15
                         },
                         {
                             id: 1,
                             text: "Petrificus Totalus",
                             isCorrect: true,
-                            correctSen: 13,
-                            falsesSen: 14
+                            correctSen: 14,
+                            falsesSen: 15
                         },
                     ]
                 }
@@ -322,14 +340,9 @@ const data = [
         ]
     },
     {
-        id: 13,
-        frame: "frame-0.png",
+        id: 14,
+        frame: "frame-9.jpg",
         scenario: [
-            {
-                name: "الساحرة",
-                pic: "female.png",
-                text: "سأقوم أنا بتشتيت إنتباهه بتحويل صخرة كبيرة إلى شكل عنزة ليقوم الحيوان بالانتباه إليها والجري نحوها"
-            },
             {
                 name: "الساحر",
                 pic: "male.png",
@@ -339,8 +352,8 @@ const data = [
         ]
     },
     {
-        id: 14,
-        frame: "frame-0.png",
+        id: 15,
+        frame: "frame-6.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -353,12 +366,15 @@ const data = [
                 text: "يخرب بيتك انت ضيعته"
             },
             {
-                text: "*قام الساحر بتصغير الوحش و قد هرب*"
+                name: "الساحرة",
+                pic: "female.png",
+                audio: "./audio/female-18.mp3",
+                text: "لقد قمت بتصغيير الحيوان و الآن قد هرب."
             }
         ]
     },
     {
-        id: 15,
+        id: 16,
         frame: "frame-0.png",
         scenario: [
             {
@@ -382,7 +398,7 @@ const data = [
         ]
     },
     {
-        id: 16,
+        id: 17,
         frame: "frame-15.jpg",
         scenario: [
             {
@@ -400,19 +416,19 @@ const data = [
         ]
     },
     {
-        id: 17,
+        id: 18,
         frame: "frame-16.png",
         scenario: [
             {
                 name: "الساحر",
                 pic: "male.png",
                 audio: "./audio/male-17.mp3",
-                text: "Aguamente"
+                text: "Aguamenti"
             },
         ]
     },
     {
-        id: 18,
+        id: 19,
         frame: "frame-17.jpg",
         scenario: [
             {
@@ -461,7 +477,7 @@ const data = [
         ]
     },
     {
-        id: 19,
+        id: 20,
         frame: "frame-17.jpg",
         scenario: [
             {
@@ -472,7 +488,7 @@ const data = [
         ]
     },
     {
-        id: 20,
+        id: 21,
         frame: "frame-17.jpg",
         scenario: [
             {
@@ -484,7 +500,7 @@ const data = [
         ]
     },
     {
-        id: 21,
+        id: 22,
         frame: "frame-20.png",
         scenario: [
             {
@@ -493,7 +509,7 @@ const data = [
         ]
     },
     {
-        id: 22,
+        id: 23,
         frame: "frame-20.png",
         scenario: [
             {
@@ -504,7 +520,7 @@ const data = [
         ]
     },
     {
-        id: 23,
+        id: 24,
         frame: "frame-20.png",
         scenario: [
             {
@@ -520,22 +536,22 @@ const data = [
                             id: 0,
                             text: "Alohomora",
                             isCorrect: false,
-                            correctSen: 24,
-                            falsesSen: 25
+                            correctSen: 25,
+                            falsesSen: 26
                         },
                         {
                             id: 1,
                             text: "Accio",
                             isCorrect: false,
-                            correctSen: 24,
-                            falsesSen: 25
+                            correctSen: 25,
+                            falsesSen: 26
                         },
                         {
                             id: 3,
                             text: "Petrificus Totalus",
                             isCorrect: true,
-                            correctSen: 24,
-                            falsesSen: 25
+                            correctSen: 25,
+                            falsesSen: 26
                         },
                     ]
                 }
@@ -543,7 +559,7 @@ const data = [
         ]
     },
     {
-        id: 24,
+        id: 25,
         frame: "frame-23.jpg",
         scenario: [
             {
@@ -555,12 +571,13 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
+                audio: "./audio/female-15.mp3",
                 text: "هيا بنا لنعود إلى السيرك."
             },
         ]
     },
     {
-        id: 25,
+        id: 26,
         frame: "frame-24.png",
         scenario: [
             {
@@ -572,7 +589,7 @@ const data = [
         ]
     },
     {
-        id: 26,
+        id: 27,
         frame: "frame-0.png",
         scenario: [
             {
@@ -581,15 +598,10 @@ const data = [
                 audio: "./audio/male-22.mp3",
                 text: "ثلاثة حيوانات استرجعت من أصل ثلاثة. رقم جيد أليس كذلك ؟"
             },
-            {
-                name: "الساحرة",
-                pic: "female.png",
-                text: "هاها أخيراً أنتهى هذا الكابوس"
-            },
         ]
     },
     {
-        id: 27,
+        id: 28,
         frame: "frame-0.png",
         scenario: [
             {
@@ -598,15 +610,10 @@ const data = [
                 audio: "./audio/male-23.mp3",
                 text: "حيوانان من أصل ثلاثة. رقم لا بأس به و إن كنت أتمنى إسترجاعهم كلهم"
             },
-            {
-                name: "الساحرة",
-                pic: "female.png",
-                text: "هاها أخيراً أنتهى هذا الكابوس"
-            },
         ]
     },
     {
-        id: 28,
+        id: 29,
         frame: "frame-0.png",
         scenario: [
             {
@@ -618,8 +625,8 @@ const data = [
         ]
     },
     {
-        id: 29,
-        frame: "frame-0.png",
+        id: 30,
+        frame: "frame-4.png",
         scenario: [
             {
                 name: "الساحر",
@@ -630,7 +637,7 @@ const data = [
         ]
     },
     {
-        id: 30,
+        id: 31,
         frame: "frame-0.png",
         scenario: [
             {
