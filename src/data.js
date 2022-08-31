@@ -62,7 +62,7 @@ const data = [
     },
     {
         id: 6,
-        frame: "frame-24.jpg",
+        frame: "frame-26.jpg",
         scenario: [
             {
                 name: "الشاب",
@@ -121,7 +121,7 @@ const data = [
     },
     {
         id: 9,
-        frame: "frame-26.jpg",
+        frame: "frame-33.jpg",
         scenario: [
             {
                 name: "الساحر",
@@ -399,14 +399,14 @@ const data = [
                             text: "Reducio ",
                             isCorrect: false,
                             correctSen: 23,
-                            falsesSen: 14
+                            falsesSen: 24
                         },
                         {
                             id: 1,
                             text: "Petrificus Totalus",
                             isCorrect: true,
                             correctSen: 23,
-                            falsesSen: 14
+                            falsesSen: 24
                         },
                     ]
                 }
