@@ -45,6 +45,7 @@ const data = [
             {
                 name: "الشاب",
                 pic: "youth.png",
+                audio: "./audio/youth-3.mp3",
                 text: "ما الذي يحدث هنا ؟",
             },
         ]
@@ -56,6 +57,7 @@ const data = [
             {
                 name: "الشاب",
                 pic: "youth.png",
+                audio: "./audio/youth-4.mp3",
                 text: "عاااااااااااااا",
             },
         ]
