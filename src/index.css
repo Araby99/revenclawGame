@@ -217,3 +217,12 @@ progress::-webkit-progress-value { background: rgb(24, 119, 242) }
     gap: 5px;
     flex-wrap: wrap;
 }
+.start-from {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.start-from button {
+    padding: 10px 30px;
+    font-weight: 700;
+}

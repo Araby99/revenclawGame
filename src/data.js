@@ -76,16 +76,6 @@ const data = [
     },
     {
         id: 7,
-        frame: "few.jpg",
-        scenario: [
-            {
-                audio: "./audio/few.mp3",
-                text: "A few moments later",
-            },
-        ]
-    },
-    {
-        id: 8,
         frame: "frame-4.png",
         scenario: [
             {
@@ -121,7 +111,7 @@ const data = [
         ]
     },
     {
-        id: 9,
+        id: 8,
         frame: "frame-33.jpg",
         scenario: [
             {
@@ -133,13 +123,13 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
-                audio: "",
+                audio: "./audio/female-19.mp3",
                 text: " تقصد وأنا بتلك الهيئة أم بالأخرى؟"
             },
         ]
     },
     {
-        id: 10,
+        id: 9,
         frame: "frame-27.jpg",
         scenario: [
             {
@@ -148,7 +138,7 @@ const data = [
         ]
     },
     {
-        id: 11,
+        id: 10,
         frame: "frame-29.jpg",
         scenario: [
             {
@@ -160,13 +150,23 @@ const data = [
         ]
     },
     {
-        id: 12,
+        id: 11,
         frame: "frame-28.jpg",
         scenario: [
             {
                 name: "الساحرة",
                 pic: "female.png",
                 text: "تث تث"
+            },
+        ]
+    },
+    {
+        id: 12,
+        frame: "few.jpg",
+        scenario: [
+            {
+                audio: "./audio/few.mp3",
+                text: "A few moments later",
             },
         ]
     },
@@ -184,7 +184,7 @@ const data = [
     },
     {
         id: 14,
-        frame: "frame-30.jpg",
+        frame: "frame-35.jpg",
         scenario: [
             {
                 name: "الساحرة",
@@ -675,7 +675,7 @@ const data = [
     },
     {
         id: 36,
-        frame: "frame-4.png",
+        frame: "frame-34.jpg",
         scenario: [
             {
                 name: "الساحر",

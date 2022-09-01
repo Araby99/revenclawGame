@@ -9,7 +9,7 @@ const Circus = () => {
         r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
         return images;
     }
-    const [data, setData] = useState(gameData)
+    const [data, setData] = useLocalStorage("data", () => gameData)
     const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
     const [progress, setProgress] = useLocalStorage("progress", () => 0);
     const [textActive, setTextActive] = useLocalStorage("textActive", () => 0);
@@ -23,6 +23,7 @@ const Circus = () => {
     const [hunt, setHunt] = useLocalStorage("hunt", () => false);
     const [animals, setAnimals] = useLocalStorage("animals", () => 0);
     const [gameOver, setGameOver] = useLocalStorage("gameOver", () => false);
+    const [startFrom, setStartFrom] = useState(false)
     let emptySound = new Audio("");
     const gameover = () => {
         localStorage.clear()
@@ -104,6 +105,9 @@ const Circus = () => {
         if (progress === 1) {
             setAnimation({ animation: "img 1s ease-in-out" })
         }
+        if (data[progress].id >= 1 && data[progress].id < 40) {
+            setStartFrom(true)
+        }
         document.getElementsByClassName("frame")[0].addEventListener("animationend", () => setAnimation({ animation: "none" }));
         if (data[progress].scenario && !useless.includes(data[progress].id)) {
             sound.pause()
@@ -144,6 +148,11 @@ const Circus = () => {
     return (
         <div className='circus'>
             <div className="frame" style={animation}>
+                {startFrom && (
+                    <div className="start-from">
+                        <button onClick={() => gameover()}>إبدأ من البداية</button>
+                    </div>
+                )}
                 <img src={images[data[progress].frame]} alt="Background" className='background' />
                 {data[progress].playIcon && (
                     <div className="play-icon">
