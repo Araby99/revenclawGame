@@ -722,7 +722,6 @@ const data = [
             {
                 name: "الساحرة",
                 pic: "female.png",
-                audio: "./audio/female-15.mp3",
                 text: "باين كده الحيوانات كلها ضاعت يا معلم هي كانت تلزمك في حاجة ؟"
             },
         ]
